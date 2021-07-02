@@ -8,7 +8,7 @@ namespace Editor.Build
     public static class Builder
     {
         [MenuItem("Build/Android")]
-        public static void MyBuild()
+        public static void BuildAndroid()
         {
             BuildReport report = BuildPlayer(new BuildPlayerOptions()
             {
