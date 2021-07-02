@@ -4,7 +4,7 @@ namespace Editor.Build
 {
     public static class Builder
     {
-        [MenuItem("Build/Build Android")]
+        [MenuItem("Build/Android")]
         public static void MyBuild()
         {
             BuildPipeline.BuildPlayer(new BuildPlayerOptions()
