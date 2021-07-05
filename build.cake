@@ -14,6 +14,8 @@ Task("Build-Android")
     .IsDependentOn("Clean-Artifacts")    
     .Does(() =>
 {
+    // test
+
     UnityEditor(2020, 3, 11,
         new UnityEditorArguments(){
             ProjectPath = "./src/JsonTest",
