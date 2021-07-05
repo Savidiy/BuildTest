@@ -16,6 +16,7 @@ Task("Build-Android")
 {
     UnityEditor(2020, 3, 11,
         new UnityEditorArguments(){
+            ProjectPath = "./src/JsonTest",
             ExecuteMethod = "Editor.Build.Builder.BuildAndroid",
             BuildTarget = Android,
             LogFile = "./artifacts/build.log",
