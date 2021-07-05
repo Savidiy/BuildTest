@@ -16,8 +16,6 @@ Task("Build-Android")
 {
     UnityEditor(2020, 3, 11,
         new UnityEditorArguments(){
-            BatchMode = true,
-            Quit = true,
             ExecuteMethod = "Editor.Build.Builder.BuildAndroid",
             BuildTarget = Android,
             LogFile = "./artifacts/build.log",
