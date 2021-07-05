@@ -1,4 +1,6 @@
-#addin nuget:?package=Cake.Unity
+#addin nuget:?package=Cake.Unity&version=0.8.1
+
+using static Cake.Unity.Arguments.BuildTarget;
 
 var target = Argument("target", "Build-Android");
 
@@ -12,7 +14,18 @@ Task("Build-Android")
     .IsDependentOn("Clean-Artifacts")    
     .Does(() =>
 {
-    Console.WriteLine("Build be here!");
+    UnityEditor(2020, 3, 11,
+        new UnityEditorArguments(){
+            BatchMode = true,
+            Quit = true,
+            ExecuteMethod = "Editor.Build.Builder.BuildAndroid",
+            BuildTarget = Android,
+            LogFile = "./artifacts/build.log",
+        },
+        new UnityEditorSettings(){
+            RealTimeLog = true,
+        }
+    );
 });
 
 RunTarget(target);
